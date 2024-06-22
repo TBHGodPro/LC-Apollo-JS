@@ -1,0 +1,110 @@
+diff --git a/node_modules/@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/extra.d.ts b/node_modules/@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/extra.d.ts
+new file mode 100644
+index 0000000..c5b67a1
+--- /dev/null
++++ b/node_modules/@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/extra.d.ts
+@@ -0,0 +1,5 @@
++export { Uuid } from './common/v1/uuid_pb';
++export { Color } from './common/v1/color_pb';
++export { Icon, ItemStackIcon, SimpleResourceLocationIcon, AdvancedResourceLocationIcon } from './common/v1/icon_pb';
++export { TeamMember } from './team/v1/schema_pb';
++export { Location } from './common/v1/location_pb';
+diff --git a/node_modules/@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/extra.js b/node_modules/@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/extra.js
+new file mode 100644
+index 0000000..4965d73
+--- /dev/null
++++ b/node_modules/@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/extra.js
+@@ -0,0 +1,5 @@
++export { Uuid } from './common/v1/uuid_pb.js';
++export { Color } from './common/v1/color_pb.js';
++export { Icon, ItemStackIcon, SimpleResourceLocationIcon, AdvancedResourceLocationIcon } from './common/v1/icon_pb.js';
++export { TeamMember } from './team/v1/schema_pb.js';
++export { Location } from './common/v1/location_pb.js';
+diff --git a/node_modules/@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/index.d.ts b/node_modules/@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/index.d.ts
+new file mode 100644
+index 0000000..0e1cd49
+--- /dev/null
++++ b/node_modules/@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/index.d.ts
+@@ -0,0 +1,38 @@
++export { DisplayBeaconBeamMessage, RemoveBeaconBeamMessage, ResetBeaconBeamsMessage } from './beam/v1/schema_pb';
++export { DisplayBorderMessage, RemoveBorderMessage, ResetBordersMessage } from './border/v1/schema_pb';
++export { RemoveLiveChatMessageMessage, DisplayLiveChatMessageMessage } from './chat/v1/schema_pb';
++export { ResetColoredFireMessage, ResetColoredFiresMessage, OverrideColoredFireMessage } from './coloredfire/v1/schema_pb';
++export { OverrideConfigurableSettingsMessage } from './configurable/v1/schema_pb';
++export { RemoveCooldownMessage, ResetCooldownsMessage, DisplayCooldownMessage } from './cooldown/v1/schema_pb';
++export { FlipEntityMessage, ResetFlipedEntityMessage, ResetRainbowSheepMessage, OverrideRainbowSheepMessage } from './entity/v1/schema_pb';
++export { ResetGlowEffectMessage, ResetGlowEffectsMessage, OverrideGlowEffectMessage } from './glow/v1/schema_pb';
++export { RemoveHologramMessage, ResetHologramsMessage, DisplayHologramMessage } from './hologram/v1/schema_pb';
++export { HideBodyPartMessage, ResetBodyPartMessage, HideArmorPiecesMessage, ResetArmorPiecesMessage } from './limb/v1/schema_pb';
++export { ResetNametagMessage, ResetNametagsMessage, OverrideNametagMessage } from './nametag/v1/schema_pb';
++export { ResetNickHiderMessage, OverrideNickHiderMessage } from './nickhider/v1/schema_pb';
++export { ResetNotificationsMessage, DisplayNotificationMessage } from './notification/v1/schema_pb';
++export { ResetPlayerPingMessage, RemovePlayerPingMessage, SetPingMarkerTypeMessage, DisplayPlayerPingMessage, RequestPlayerPingMessage, SetPingMarkerTypesMessage, ResetPingMarkerTypesMessage, RemovePingMarkerTypeMessage } from './pingmarker/v1/schema_pb';
++export { ResetServerRichPresenceMessage, OverrideServerRichPresenceMessage } from './richpresence/v1/schema_pb';
++export { EnableStaffModsMessage, DisableStaffModsMessage } from './staffmod/v1/schema_pb';
++export { StopStopwatchMessage, ResetStopwatchMessage, StartStopwatchMessage } from './stopwatch/v1/schema_pb';
++export { ResetTeamMembersMessage, UpdateTeamMembersMessage } from './team/v1/schema_pb';
++export { ResetTitlesMessage, DisplayTitleMessage } from './title/v1/schema_pb';
++export { SetTntCountdownMessage } from './tntcountdown/v1/schema_pb';
++export { PingData, PingRequest, PingResponse, TransferRequest, TransferResponse } from './transfer/v1/schema_pb';
++export { ResetVignetteMessage, DisplayVignetteMessage } from './vignette/v1/schema_pb';
++export { RemoveWaypointMessage, ResetWaypointsMessage, DisplayWaypointMessage } from './waypoint/v1/schema_pb';
++
++export { CharacterAbilityMessage, OverrideCharacterMessage, OverrideCharacterAbilityMessage, OverrideCharacterCosmeticMessage } from './evnt/v1/character_pb';
++export { UpdateCosmeticsMessage, OverrideCosmeticResourcesMessage } from './evnt/v1/cosmetics_pb';
++export { EventPlayerMessage, EventOverviewMessage, EventTeamStatusMessage, EventGameOverviewMessage, EventPlayerStatusMessage, EventStatusOverviewMessage } from './evnt/v1/event_pb';
++export { OpenGuiMessage, CloseGuiMessage } from './evnt/v1/gui_pb';
++export { ResetHeartTextureMessage, OverrideHeartTextureMessage } from './evnt/v1/hearttexture_pb';
++
++export { PlayerChatOpenMessage, PlayerChatCloseMessage } from './packetenrichment/v1/chat_pb';
++export { PlayerAttackMessage } from './packetenrichment/v1/melee_pb';
++export { PacketInfo } from './packetenrichment/v1/packet_pb';
++export { PlayerInfo } from './packetenrichment/v1/player_pb';
++export { PlayerUseItemMessage } from './packetenrichment/v1/world_pb';
++
++export { ModMessage, PlayerHandshakeMessage } from './player/v1/handshake_pb';
++export { UpdatePlayerWorldMessage } from './player/v1/world_pb';
+diff --git a/node_modules/@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/index.js b/node_modules/@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/index.js
+new file mode 100644
+index 0000000..9713e61
+--- /dev/null
++++ b/node_modules/@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/index.js
+@@ -0,0 +1,38 @@
++export { DisplayBeaconBeamMessage, RemoveBeaconBeamMessage, ResetBeaconBeamsMessage } from './beam/v1/schema_pb.js';
++export { DisplayBorderMessage, RemoveBorderMessage, ResetBordersMessage } from './border/v1/schema_pb.js';
++export { RemoveLiveChatMessageMessage, DisplayLiveChatMessageMessage } from './chat/v1/schema_pb.js';
++export { ResetColoredFireMessage, ResetColoredFiresMessage, OverrideColoredFireMessage } from './coloredfire/v1/schema_pb.js';
++export { OverrideConfigurableSettingsMessage } from './configurable/v1/schema_pb.js';
++export { RemoveCooldownMessage, ResetCooldownsMessage, DisplayCooldownMessage } from './cooldown/v1/schema_pb.js';
++export { FlipEntityMessage, ResetFlipedEntityMessage, ResetRainbowSheepMessage, OverrideRainbowSheepMessage } from './entity/v1/schema_pb.js';
++export { ResetGlowEffectMessage, ResetGlowEffectsMessage, OverrideGlowEffectMessage } from './glow/v1/schema_pb.js';
++export { RemoveHologramMessage, ResetHologramsMessage, DisplayHologramMessage } from './hologram/v1/schema_pb.js';
++export { HideBodyPartMessage, ResetBodyPartMessage, HideArmorPiecesMessage, ResetArmorPiecesMessage } from './limb/v1/schema_pb.js';
++export { ResetNametagMessage, ResetNametagsMessage, OverrideNametagMessage } from './nametag/v1/schema_pb.js';
++export { ResetNickHiderMessage, OverrideNickHiderMessage } from './nickhider/v1/schema_pb.js';
++export { ResetNotificationsMessage, DisplayNotificationMessage } from './notification/v1/schema_pb.js';
++export { ResetPlayerPingMessage, RemovePlayerPingMessage, SetPingMarkerTypeMessage, DisplayPlayerPingMessage, RequestPlayerPingMessage, SetPingMarkerTypesMessage, ResetPingMarkerTypesMessage, RemovePingMarkerTypeMessage } from './pingmarker/v1/schema_pb.js';
++export { ResetServerRichPresenceMessage, OverrideServerRichPresenceMessage } from './richpresence/v1/schema_pb.js';
++export { EnableStaffModsMessage, DisableStaffModsMessage } from './staffmod/v1/schema_pb.js';
++export { StopStopwatchMessage, ResetStopwatchMessage, StartStopwatchMessage } from './stopwatch/v1/schema_pb.js';
++export { ResetTeamMembersMessage, UpdateTeamMembersMessage } from './team/v1/schema_pb.js';
++export { ResetTitlesMessage, DisplayTitleMessage } from './title/v1/schema_pb.js';
++export { SetTntCountdownMessage } from './tntcountdown/v1/schema_pb.js';
++export { PingData, PingRequest, PingResponse, TransferRequest, TransferResponse } from './transfer/v1/schema_pb.js';
++export { ResetVignetteMessage, DisplayVignetteMessage } from './vignette/v1/schema_pb.js';
++export { RemoveWaypointMessage, ResetWaypointsMessage, DisplayWaypointMessage } from './waypoint/v1/schema_pb.js';
++
++export { CharacterAbilityMessage, OverrideCharacterMessage, OverrideCharacterAbilityMessage, OverrideCharacterCosmeticMessage } from './evnt/v1/character_pb.js';
++export { UpdateCosmeticsMessage, OverrideCosmeticResourcesMessage } from './evnt/v1/cosmetics_pb.js';
++export { EventPlayerMessage, EventOverviewMessage, EventTeamStatusMessage, EventGameOverviewMessage, EventPlayerStatusMessage, EventStatusOverviewMessage } from './evnt/v1/event_pb.js';
++export { OpenGuiMessage, CloseGuiMessage } from './evnt/v1/gui_pb.js';
++export { ResetHeartTextureMessage, OverrideHeartTextureMessage } from './evnt/v1/hearttexture_pb.js';
++
++export { PlayerChatOpenMessage, PlayerChatCloseMessage } from './packetenrichment/v1/chat_pb.js';
++export { PlayerAttackMessage } from './packetenrichment/v1/melee_pb.js';
++export { PacketInfo } from './packetenrichment/v1/packet_pb.js';
++export { PlayerInfo } from './packetenrichment/v1/player_pb.js';
++export { PlayerUseItemMessage } from './packetenrichment/v1/world_pb.js';
++
++export { ModMessage, PlayerHandshakeMessage } from './player/v1/handshake_pb.js';
++export { UpdatePlayerWorldMessage } from './player/v1/world_pb.js';

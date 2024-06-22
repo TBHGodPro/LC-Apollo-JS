@@ -1,0 +1,24 @@
+{
+  "name": "lc-apollo-js",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "node scripts/clean.mjs; tsc; node scripts/copyPackets.mjs;",
+    "test": "node test/index.js",
+    "postinstall": "patch-package"
+  },
+  "author": "TBHGodPro",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^20.13.0",
+    "patch-package": "^8.0.0",
+    "typed-emitter": "^2.1.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@buf/lunarclient_apollo.bufbuild_es": "^1.9.0-20240525042717-1da7022e8b79.1",
+    "@bufbuild/protobuf": "^1.10.0",
+    "@minecraft-js/uuid": "^1.0.3"
+  }
+}
