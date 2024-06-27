@@ -57,7 +57,7 @@ export default class Player extends (EventEmitter as new () => TypedEventEmitter
   public async onceReady(): Promise<void> {
     while (true) {
       if (OverrideConfigurableSettingsMessage) return;
-      await new Promise(res => setTimeout(res, 2));
+      await new Promise(res => setTimeout(res));
     }
   }
 
