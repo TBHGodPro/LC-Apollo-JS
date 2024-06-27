@@ -118,6 +118,14 @@ export default class Player extends (EventEmitter as new () => TypedEventEmitter
     this.sendPacket(packet);
   }
 
+  public setAllStaffModsState(enabled: boolean): void {
+    const packet = new (enabled ? EnableStaffModsMessage : DisableStaffModsMessage)({
+      staffMods: Object.keys(StaffMod).filter(i => typeof i === 'number') as any,
+    });
+
+    this.sendPacket(packet);
+  }
+
   public glowPlayer(uuid: UUID, color: number): void {
     const packet = new OverrideGlowEffectMessage({
       playerUuid: getUUIDObject(uuid),
