@@ -54,6 +54,13 @@ export default class Player extends (EventEmitter as new () => TypedEventEmitter
     });
   }
 
+  public async onceReady(): Promise<void> {
+    while (true) {
+      if (OverrideConfigurableSettingsMessage) return;
+      await new Promise(res => setTimeout(res, 2));
+    }
+  }
+
   public connect(): void {
     this.hasReceivedHandshake = false;
     this.registerPluginChannels();
@@ -120,7 +127,9 @@ export default class Player extends (EventEmitter as new () => TypedEventEmitter
 
   public setAllStaffModsState(enabled: boolean): void {
     const packet = new (enabled ? EnableStaffModsMessage : DisableStaffModsMessage)({
-      staffMods: Object.keys(StaffMod).filter(i => typeof i === 'number') as any,
+      staffMods: Object.keys(StaffMod)
+        .filter(i => !isNaN(i as any))
+        .map(i => parseInt(i)),
     });
 
     this.sendPacket(packet);
