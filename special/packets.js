@@ -1,5 +1,5 @@
 eval(`
-import('@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/index.js').then(data => {
+import('./packets.full.mjs').then(data => {
     Object.keys(data).forEach(key => {
         exports[key] = data[key];
     })

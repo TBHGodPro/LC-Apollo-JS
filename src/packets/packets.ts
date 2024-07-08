@@ -1,1 +1,1 @@
-export * from '@buf/lunarclient_apollo.bufbuild_es/lunarclient/apollo/index';
+export * from '../../special/packets';
