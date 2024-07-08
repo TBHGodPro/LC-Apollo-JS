@@ -20,5 +20,11 @@
     "@buf/lunarclient_apollo.bufbuild_es": "^1.9.0-20240525042717-1da7022e8b79.1",
     "@bufbuild/protobuf": "^1.10.0",
     "@minecraft-js/uuid": "^1.0.3"
-  }
+  },
+  "files": [
+    "dist",
+    "special",
+    "patches",
+    "tsconfig.json"
+  ]
 }
