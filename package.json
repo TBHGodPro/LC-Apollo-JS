@@ -1,6 +1,6 @@
 {
   "name": "lc-apollo-js",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "scripts": {
     "build": "node scripts/clean.mjs; tsc; node scripts/copyPackets.mjs;",
@@ -21,8 +21,8 @@
   },
   "files": [
     "dist",
-    "special",
     "patches",
+    "special",
     "tsconfig.json"
   ]
 }
