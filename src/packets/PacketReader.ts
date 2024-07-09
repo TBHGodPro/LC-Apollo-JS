@@ -1,7 +1,7 @@
 import { EventEmitter } from 'events';
 import TypedEventEmitter from 'typed-emitter';
 import { Any } from '@bufbuild/protobuf';
-import * as packets from '../../special/packets';
+import packets from '../../special/packets';
 
 export default class PacketReader extends (EventEmitter as new () => TypedEventEmitter<PacketReaderEvents>) {
   constructor() {
