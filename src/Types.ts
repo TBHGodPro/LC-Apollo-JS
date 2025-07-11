@@ -3,11 +3,11 @@ import { EasyValue } from './packets/types';
 export type ConfiguredSetting = (
   | {
       target: string;
-      case: 'lunarClientMod';
+      case: 'lunarClientMod' | 'mod';
     }
   | {
       target: ModuleTarget | string;
-      case: 'apolloModule';
+      case: 'apolloModule' | 'module';
     }
 ) & {
   enabled: boolean;

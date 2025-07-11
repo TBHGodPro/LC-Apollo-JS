@@ -93,6 +93,7 @@ export default class Player extends (EventEmitter as new () => TypedEventEmitter
   }
 
   public configureSettings(...settings: ConfiguredSetting[]): void {
+    this.configuredSettings = this.configuredSettings.filter(i => !settings.find(j => j.case == i.case && j.target == i.target));
     this.configuredSettings = [...settings, ...this.configuredSettings];
 
     const packet = new OverrideConfigurableSettingsMessage({
@@ -109,7 +110,7 @@ export default class Player extends (EventEmitter as new () => TypedEventEmitter
 
         return {
           target: {
-            case: setting.case,
+            case: setting.case == 'mod' ? 'lunarClientMod' : setting.case == 'module' ? 'apolloModule' : setting.case,
             value: setting.target as string,
           },
           enable: setting.enabled,
@@ -398,6 +399,17 @@ export default class Player extends (EventEmitter as new () => TypedEventEmitter
     const packet = new ResetCooldownsMessage();
 
     this.sendPacket(packet);
+  }
+
+  public disableMissPenalty() {
+    this.configureSettings({
+      target: ModuleTarget.COMBAT,
+      case: 'apolloModule',
+      enabled: true,
+      properties: {
+        'disable-miss-penalty': true,
+      },
+    });
   }
 }
 
