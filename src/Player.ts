@@ -401,6 +401,17 @@ export default class Player extends (EventEmitter as new () => TypedEventEmitter
     this.sendPacket(packet);
   }
 
+  public enableMissPenalty() {
+    this.configureSettings({
+      target: ModuleTarget.COMBAT,
+      case: 'apolloModule',
+      enabled: true,
+      properties: {
+        'disable-miss-penalty': false,
+      },
+    });
+  }
+
   public disableMissPenalty() {
     this.configureSettings({
       target: ModuleTarget.COMBAT,
